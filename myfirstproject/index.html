@@ -18,22 +18,125 @@ var onDeviceReady = function() {
 function onPause() { 
 alert("sdfds"); 
 }
-	
+	function onBackButton(){
+	if($("div.ui-page-active").get(0).id == 'page1'){
+	alert("sdfsf");	
+		}	else if($("div.ui-page-active").get(0).id=='page2'){
+			$.mobile.changePage("#page1",{transition:"sildeup"});
+			
+			}
+}
 	function init() {
 		document.addEventListener("deviceready", onDeviceReady, true); };
 </script>
 </head>
 <body onLoad ="init()">
-<div data-role="page" id="myhome">
-  <div data-role="header" >
-  <h1>DANG NHAP</h1>
-  
+<div id="hello1" data-role="content" data-palette="">
+  <!-- content -->
+  <div data-role="page"  id="hello1" >
+    <ul data-role="listview" data-filter="true" data-filter-placeholder="Search..." data-filter-theme="c" data-inset="true"  >
+      <li data-icon="arrow-r"> <a href="#tinv-league"> <img alt="promotions" src="http://thethao247.vn/2013/05/12/v-league2-13.png">
+        <h1>V-League</h1>
+        </a> </li>
+      <li data-icon="arrow-r"> <a> <img alt="food" src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQXQdXqEjDIXz2QzHZEKbYKh6PMyY8x0B6OG2QProvKDkCByza7">
+        <h1>Ngoại Hạng Anh</h1>
+        </a> </li>
+      <li data-icon="arrow-r"> <a> <img alt="travel" src="http://a9.vietbao.vn/images/vi975/the-thao/75276521-LaLiga.jpg">
+        <h1>La LiGa</h1>
+        </a> </li>
+      <li data-icon="arrow-r"> <a> <img alt="discover" src="http://forzaitalianfootball.com/wp-content/uploads/2010/08/Serie-A-Logo.jpg">
+        <h1>Serie A</h1>
+        </a> </li>
+      <li data-icon="arrow-r"> <a> <img alt="tickets" src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRdtdRmZ2jJ5xRCOgTvvomxZEuBr8pxMAtQKrekVa8iAQGYowBRag">
+        <h1>Bundesliga</h1>
+        </a> </li>
+      <li data-icon="arrow-r"> <a> <img alt="settings" src="http://s3.amazonaws.com/rapgenius/filepicker%2FRWqQJqIoSOG92lgFM4mA_ligue_1.jpg">
+        <h1>Ligue 1</h1>
+        </a> </li>
+    </ul>
+    <div data-role="footer" data-position="fixed">
+      <!-- navbar -->
+      <div data-role="navbar">
+        <ul>
+          <li><a href="#hello1" data-icon="home">Trang Chủ</a></li>
+          <li><a href="#hello2" data-icon="bars" class="ui-btn-active" data-transition="flip">Livescore</a></li>
+          <li><a href="#hello3" data-icon="grid">BXH</a></li>
+        </ul>
+      </div>
+      <!-- /navbar -->
+    </div>
+    <!-- /footer -->
   </div>
-  
-  <div data-role="content" >
-  username: <input type="text">
-  passworld: <input type="password"></div>
-  <div data-role="footer" ></div>
+  <!-- /content -->
+  <div data-role="page"  id="hello2" >
+    <ul data-role="listview" data-inset="true"  >
+      <li data-icon="arrow-r"> <a> <img alt="promotions" src="http://thethao247.vn/2013/05/12/v-league2-13.png">
+        <h1>V-League</h1>
+        </a> </li>
+      <li data-icon="arrow-r"> <a> <img alt="food" src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQXQdXqEjDIXz2QzHZEKbYKh6PMyY8x0B6OG2QProvKDkCByza7">
+        <h1>Ngoại Hạng Anh</h1>
+        </a> </li>
+      <li data-icon="arrow-r"> <a> <img alt="travel" src="http://a9.vietbao.vn/images/vi975/the-thao/75276521-LaLiga.jpg">
+        <h1>La LiGa</h1>
+        </a> </li>
+      <li data-icon="arrow-r"> <a> <img alt="discover" src="http://forzaitalianfootball.com/wp-content/uploads/2010/08/Serie-A-Logo.jpg">
+        <h1>Serie A</h1>
+        </a> </li>
+      <li data-icon="arrow-r"> <a> <img alt="tickets" src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRdtdRmZ2jJ5xRCOgTvvomxZEuBr8pxMAtQKrekVa8iAQGYowBRag">
+        <h1>Bundesliga</h1>
+        </a> </li>
+      <li data-icon="arrow-r"> <a> <img alt="settings" src="http://s3.amazonaws.com/rapgenius/filepicker%2FRWqQJqIoSOG92lgFM4mA_ligue_1.jpg">
+        <h1>Ligue 1</h1>
+        </a> </li>
+    </ul>
+    <div data-role="footer" data-position="fixed">
+      <!-- navbar -->
+      <div data-role="navbar">
+        <ul>
+          <li><a href="#hello1" data-icon="home">Trang Chủ</a></li>
+          <li><a href="#hello2" data-icon="bars" class="ui-btn-active" >Livescore</a></li>
+          <li><a href="#hello3" data-icon="grid">BXH</a></li>
+        </ul>
+      </div>
+      <!-- /navbar -->
+    </div>
+    <!-- /footer -->
+  </div>
+  <!-- /content -->
+  <div data-role="page"  id="hello3" >
+    <ul data-role="listview" data-inset="true"  >
+      <li data-icon="arrow-r"> <a href="#bxhv-league"> <img alt="promotions" src="http://thethao247.vn/2013/05/12/v-league2-13.png">
+        <h1>V-League</h1>
+        </a> </li>
+      <li data-icon="arrow-r"> <a href="#bxhnha"> <img alt="food" src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQXQdXqEjDIXz2QzHZEKbYKh6PMyY8x0B6OG2QProvKDkCByza7">
+        <h1>Ngoại Hạng Anh</h1>
+        </a> </li>
+      <li data-icon="arrow-r"> <a> <img alt="travel" src="http://a9.vietbao.vn/images/vi975/the-thao/75276521-LaLiga.jpg">
+        <h1>La LiGa</h1>
+        </a> </li>
+      <li data-icon="arrow-r"> <a> <img alt="discover" src="http://forzaitalianfootball.com/wp-content/uploads/2010/08/Serie-A-Logo.jpg">
+        <h1>Serie A</h1>
+        </a> </li>
+      <li data-icon="arrow-r"> <a> <img alt="tickets" src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRdtdRmZ2jJ5xRCOgTvvomxZEuBr8pxMAtQKrekVa8iAQGYowBRag">
+        <h1>Bundesliga</h1>
+        </a> </li>
+      <li data-icon="arrow-r"> <a> <img alt="settings" src="http://s3.amazonaws.com/rapgenius/filepicker%2FRWqQJqIoSOG92lgFM4mA_ligue_1.jpg">
+        <h1>Ligue 1</h1>
+        </a> </li>
+    </ul>
+    <div data-role="footer" data-position="fixed">
+      <!-- navbar -->
+      <div data-role="navbar">
+        <ul>
+          <li><a href="#hello1" data-icon="home">Trang Chủ</a></li>
+          <li><a href="#hello2" data-icon="bars" class="ui-btn-active">Livescore</a></li>
+          <li><a href="#hello3" data-icon="grid">BXH</a></li>
+        </ul>
+      </div>
+      <!-- /navbar -->
+    </div>
+    <!-- /footer -->
+  </div>
 </div>
 </body>
 </html>
