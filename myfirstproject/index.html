@@ -7,16 +7,11 @@
 <link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.0-beta.1/jquery.mobile-1.2.0-beta.1.min.css" />
 <script src="http://code.jquery.com/jquery-1.8.1.min.js"></script>
 <script src="http://code.jquery.com/mobile/1.2.0-beta.1/jquery.mobile-1.2.0-beta.1.min.js"></script>
-
 <script src="phonegap.js"></script>
-<script>
+<script type="text/javascript" charset="UTF-8">
 var onDeviceReady = function() {
-	var result =navigator.network.connection.type;
-	if(result == 'Connection.WIFI'){
-		alert("wifi conected");}
-	else if (result == 'Connection.None'){
-		alert("wifi notconect");
-	}
+	var result = navigator.network.connection.type;
+		alert(result);
 	
 	document.addEventListener("pause", onPause, false);	
 };
