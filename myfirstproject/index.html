@@ -14,7 +14,14 @@ var onDeviceReady = function() {
 		alert(result);
 	
 	document.addEventListener("pause", onPause, false);
-		document.addEventListener("back button", onBackButton, false);	
+		document.addEventListener("back button", onBackButton, false);
+		var currentPosition = navigator.geolocation.getCurrentPosition(onGeoSuccess, onGeoError, 
+{maximumAge: 300000, timeout:50000, enableHighAccuracy : true}
+ );
+ function onGeoSuccess(position) 
+{ clat = position.coords.latitude;
+ clng = position.coords.longitude; 
+ alert(clat +  "," +clng);}
 	
 };
 function onPause() { 
@@ -48,11 +55,12 @@ alert("resume");
 </script>
 </head>
 <body onLoad ="init()">
-<div id="hello1" data-role="content" data-palette=""> 
+<div id="hello1" data-role="content" data-palette="">
   <!-- header -->
   <div data-role="header" data-position="fixed" data-theme="b"> </div>
-  <!-- /header --> 
-  <!-- subheader --><!-- /subheader --> 
+  <!-- /header -->
+  <!-- subheader -->
+  <!-- /subheader -->
   <!-- content -->
   <div data-role="page"  id="hello1" >
     <ul data-role="listview" data-filter="true" data-filter-placeholder="Search..." data-filter-theme="c" data-inset="true"  >
@@ -75,7 +83,7 @@ alert("resume");
         <h1>Ligue 1</h1>
         </a> </li>
     </ul>
-    <div data-role="footer" data-position="fixed"> 
+    <div data-role="footer" data-position="fixed">
       <!-- navbar -->
       <div data-role="navbar">
         <ul>
@@ -84,9 +92,9 @@ alert("resume");
           <li><a href="#hello3" data-icon="grid">BXH</a></li>
         </ul>
       </div>
-      <!-- /navbar --> 
+      <!-- /navbar -->
     </div>
-    <!-- /footer --> 
+    <!-- /footer -->
   </div>
   <!-- /content -->
   <div data-role="page"  id="hello2" >
@@ -110,7 +118,7 @@ alert("resume");
         <h1>Ligue 1</h1>
         </a> </li>
     </ul>
-    <div data-role="footer" data-position="fixed"> 
+    <div data-role="footer" data-position="fixed">
       <!-- navbar -->
       <div data-role="navbar">
         <ul>
@@ -119,12 +127,11 @@ alert("resume");
           <li><a href="#hello3" data-icon="grid">BXH</a></li>
         </ul>
       </div>
-      <!-- /navbar --> 
+      <!-- /navbar -->
     </div>
-    <!-- /footer --> 
+    <!-- /footer -->
   </div>
   <!-- /content -->
-  
   <div data-role="page"  id="hello3" >
     <ul data-role="listview" data-inset="true"  >
       <li data-icon="arrow-r"> <a href="#bxhv-league"> <img alt="promotions" src="http://thethao247.vn/2013/05/12/v-league2-13.png">
@@ -146,7 +153,7 @@ alert("resume");
         <h1>Ligue 1</h1>
         </a> </li>
     </ul>
-    <div data-role="footer" data-position="fixed"> 
+    <div data-role="footer" data-position="fixed">
       <!-- navbar -->
       <div data-role="navbar">
         <ul>
@@ -155,18 +162,18 @@ alert("resume");
           <li><a href="#hello3" data-icon="grid">BXH</a></li>
         </ul>
       </div>
-      <!-- /navbar --> 
+      <!-- /navbar -->
     </div>
-    <!-- /footer --> 
+    <!-- /footer -->
   </div>
-  <div  data-role="page" data-palette="" id="tinv-league"> 
+  <div  data-role="page" data-palette="" id="tinv-league">
     <!-- header -->
     <div data-role="header" data-position="fixed">
       <h1>Tin tức V-League</h1>
     </div>
-    <!-- /header --> 
+    <!-- /header -->
     <!-- subheader -->
-    <div class="subheader"> 
+    <div class="subheader">
       <!-- navbar -->
       <div data-role="navbar" data-theme="a">
         <ul>
@@ -175,9 +182,9 @@ alert("resume");
           <li><a href="#">Hạng nhì</a></li>
         </ul>
       </div>
-      <!-- /navbar --> 
+      <!-- /navbar -->
     </div>
-    <!-- /subheader --> 
+    <!-- /subheader -->
     <!-- content -->
     <div data-role="content">
       <ul data-role="listview" data-divider-theme="d">
@@ -210,9 +217,9 @@ alert("resume");
           </a> </li>
       </ul>
     </div>
-    <!-- /content --> 
+    <!-- /content -->
     <!-- footer -->
-    <div data-role="footer" data-position="fixed"> 
+    <div data-role="footer" data-position="fixed">
       <!-- navbar -->
       <div data-role="navbar">
         <ul>
@@ -221,17 +228,16 @@ alert("resume");
           <li><a href="#hello3" data-icon="grid">BXH</a></li>
         </ul>
       </div>
-      <!-- /navbar --> 
+      <!-- /navbar -->
     </div>
-    <!-- /footer --> 
-    
+    <!-- /footer -->
   </div>
-  <div  data-role="page" data-palette="" id="bxhnha"> 
-    <!-- header --> 
-    <img  src="http://nld.vcmedia.vn/Images/Uploaded/Share/2009/05/25/bxh.jpg"/> 
-    <!-- /content --> 
+  <div  data-role="page" data-palette="" id="bxhnha">
+    <!-- header -->
+    <img  src="http://nld.vcmedia.vn/Images/Uploaded/Share/2009/05/25/bxh.jpg"/>
+    <!-- /content -->
     <!-- footer -->
-    <div data-role="footer" data-position="fixed"> 
+    <div data-role="footer" data-position="fixed">
       <!-- navbar -->
       <div data-role="navbar">
         <ul>
@@ -240,19 +246,18 @@ alert("resume");
           <li><a href="#hello3" data-icon="grid">BXH</a></li>
         </ul>
       </div>
-      <!-- /navbar --> 
+      <!-- /navbar -->
     </div>
-    <!-- /footer --> 
-    
+    <!-- /footer -->
   </div>
-  <div  data-role="page" data-palette="" id="tinhang-nhat"> 
+  <div  data-role="page" data-palette="" id="tinhang-nhat">
     <!-- header -->
     <div data-role="header" data-position="fixed">
       <h1>Tin tức V-League</h1>
     </div>
-    <!-- /header --> 
+    <!-- /header -->
     <!-- subheader -->
-    <div class="subheader"> 
+    <div class="subheader">
       <!-- navbar -->
       <div data-role="navbar" data-theme="a">
         <ul>
@@ -261,9 +266,9 @@ alert("resume");
           <li><a href="#">Hạng nhì</a></li>
         </ul>
       </div>
-      <!-- /navbar --> 
+      <!-- /navbar -->
     </div>
-    <!-- /subheader --> 
+    <!-- /subheader -->
     <!-- content -->
     <div data-role="content">
       <ul data-role="listview" data-divider-theme="d">
@@ -296,9 +301,9 @@ alert("resume");
           </a> </li>
       </ul>
     </div>
-    <!-- /content --> 
+    <!-- /content -->
     <!-- footer -->
-    <div data-role="footer" data-position="fixed"> 
+    <div data-role="footer" data-position="fixed">
       <!-- navbar -->
       <div data-role="navbar">
         <ul>
@@ -307,17 +312,16 @@ alert("resume");
           <li><a href="#hello3" data-icon="grid">BXH</a></li>
         </ul>
       </div>
-      <!-- /navbar --> 
+      <!-- /navbar -->
     </div>
-    <!-- /footer --> 
-    
+    <!-- /footer -->
   </div>
-  <div  data-role="page" data-palette="" id="bxhv-league"> 
-    <!-- header --> 
-    <img width="510px" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTCWJ-Vq2fFGJG9sGQR5Kdu57w16gO_izoqIi8iDdpmP3m828aadA"/> 
-    <!-- /content --> 
+  <div  data-role="page" data-palette="" id="bxhv-league">
+    <!-- header -->
+    <img width="510px" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTCWJ-Vq2fFGJG9sGQR5Kdu57w16gO_izoqIi8iDdpmP3m828aadA"/>
+    <!-- /content -->
     <!-- footer -->
-    <div data-role="footer" data-position="fixed"> 
+    <div data-role="footer" data-position="fixed">
       <!-- navbar -->
       <div data-role="navbar">
         <ul>
@@ -326,17 +330,16 @@ alert("resume");
           <li><a href="#hello3" data-icon="grid">BXH</a></li>
         </ul>
       </div>
-      <!-- /navbar --> 
+      <!-- /navbar -->
     </div>
-    <!-- /footer --> 
-    
+    <!-- /footer -->
   </div>
-  <div  data-role="page" data-palette="" id="bxhnha"> 
-    <!-- header --> 
-    <img width="510px" src="http://nld.vcmedia.vn/Images/Uploaded/Share/2009/05/25/bxh.jpg"/> 
-    <!-- /content --> 
+  <div  data-role="page" data-palette="" id="bxhnha">
+    <!-- header -->
+    <img width="510px" src="http://nld.vcmedia.vn/Images/Uploaded/Share/2009/05/25/bxh.jpg"/>
+    <!-- /content -->
     <!-- footer -->
-    <div data-role="footer" data-position="fixed"> 
+    <div data-role="footer" data-position="fixed">
       <!-- navbar -->
       <div data-role="navbar">
         <ul>
@@ -345,10 +348,9 @@ alert("resume");
           <li><a href="#hello3" data-icon="grid">BXH</a></li>
         </ul>
       </div>
-      <!-- /navbar --> 
+      <!-- /navbar -->
     </div>
-    <!-- /footer --> 
-    
+    <!-- /footer -->
   </div>
 </div>
 </body>
