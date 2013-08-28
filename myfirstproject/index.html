@@ -19,49 +19,33 @@
 var onDeviceReady = function() {
 	//var result = navigator.network.connection.type;
 		//alert(result);
-	var currentPosition = navigator.geolocation.getCurrentPosition(onGeoSuccess, onGeoError, {maximumAge: 300000, timeout:50000, enableHighAccuracy : true} );
+	function getcurrentPosition(){
+	var currentPosition = navigator.geolocation.getCurrentPosition(onGeoSuccess, onGeoError, {maximumAge: 300000, timeout:50000, enableHighAccuracy : true} );}
 
 function onGeoSuccess(position) { 
- // clat = position.coords.latitude;
- // clng = position.coords.longitude; 
+  clat = position.coords.latitude;
+  clng = position.coords.longitude; 
    //alert(clat +  "," +clng);
-   var myLocation = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
-
-    map  = new google.maps.Map(document.getElementById('map_canvas'), {
-	mapTypeId: google.maps.MapTypeId.ROADMAP,
-	center: myLocation,
-	zoom: 15 }); 
+   
  }
  
  
 	//document.addEventListener("pause", onPause, false);
 	///document.addEventListener("back button", onBackButton, false);
 };
-var request = { location: myLocation, radius: currentRadiusValue, types: [currentPlaceType] }; 
-var service = new google.maps.places.PlacesService(map); 
-service.nearbySearch(request, callback);
-function createMarker(place) {
-    var placeLoc = place.geometry.location;
-    var marker = new google.maps.Marker({
-	map: map,
-	position: place.geometry.location
-    }); 
-}
-infowindow  = new google.maps.InfoWindow();
-google.maps.event.addListener(marker, 'click', function () {
-	infowindow.setContent(place.name);
-	infowindow.open(map, this);
-})
-//$.initMap = function() { 
-  //var LatLng = new google.maps.LatLng(clat,clng);
-  //$('#map_canvas').gmap({'center':LatLng,'zoom':15,'minzoom':10,'disableDefaultUI':true});
-//}
+
+
+
 //$('#map_canvas').gmap('get', 'map').setOptions({'center': new google.maps.LatLng(clat, clng) });
 //function onPause() { 
 //alert("resume"); 
 //}	
 	function init() {
 		document.addEventListener("deviceready", onDeviceReady, true); }
+	$(document).ready(function(){
+  var LatLng = new google.maps.LatLng(clat,clng);
+  $('#map_canvas').gmap({'center':LatLng,'zoom':15,'minzoom':10,'disableDefaultUI':true});
+});
 		
 
 </script>
