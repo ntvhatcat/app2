@@ -18,6 +18,19 @@ var onDeviceReady = function() {
 function onPause() { 
 alert("sdfds"); 
 }
+	function onLoad(){
+	var intervalID=window.setInterval(
+										function(){
+											if(PhoneGap.available){
+												window.clearInterval(intervalID);
+												OnDeviceReady();
+												}
+										},	500 );
+										
+										
+											
+	
+	}
 	function onBackButton(){
 	if($("div.ui-page-active").get(0).id == 'hello1'){
 	alert("sdfsf");	
