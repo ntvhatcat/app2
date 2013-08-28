@@ -16,46 +16,27 @@
 var onDeviceReady = function() {
 	var result = navigator.network.connection.type;
 		alert(result);
-	
-	
-		var currentPosition = navigator.geolocation.getCurrentPosition(onGeoSuccess, onGeoError, 
-{maximumAge: 300000, timeout:50000, enableHighAccuracy : true}
- );
+	var currentPosition = navigator.geolocation.getCurrentPosition(onGeoSuccess, onGeoError, 
+{maximumAge: 300000, timeout:50000, enableHighAccuracy : true} );
  function onGeoSuccess(position) 
 { clat = position.coords.latitude;
  clng = position.coords.longitude; 
  //alert(clat +  "," +clng);
- 
- 
  }
 	document.addEventListener("pause", onPause, false);
-		document.addEventListener("back button", onBackButton, false);
+	document.addEventListener("back button", onBackButton, false);
 };
 $.initMap = function() { 
 var LatLng = new google.maps.LatLng(clat,clng);
-$('#map_canvas').gmap({'center':LatLng,'zoom':15,'minzoom':10,'disableDefaultUI':true});
+$('#map_canvas').gmap({'center':LatLng,'zoom':15,'minzoom':10,'disableDefaultUI':true});}
 //$('#map_canvas').gmap('get', 'map').setOptions({'center': new google.maps.LatLng(clat, clng) });
 function onPause() { 
 alert("resume"); 
-}
-	function onLoad(){
-	var intervalID=window.setInterval(
-										function(){
-											if(PhoneGap.available){
-												window.clearInterval(intervalID);
-												OnDeviceReady();
-												}
-										},	500 );
-										
-										
-											
-	
-	}
-	
+}	
 	function init() {
 		document.addEventListener("deviceready", onDeviceReady, true); }
 		
-};
+
 </script>
 </head>
 <body onLoad ="init()">
