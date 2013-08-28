@@ -15,8 +15,8 @@
 <script type="text/javascript" charset="UTF-8">
 
 var onDeviceReady = function() {
-	var result = navigator.network.connection.type;
-		alert(result);
+	//var result = navigator.network.connection.type;
+		//alert(result);
 	var currentPosition = navigator.geolocation.getCurrentPosition(onGeoSuccess, onGeoError, {maximumAge: 300000, timeout:50000, enableHighAccuracy : true} );
 
 function onGeoSuccess(position) { 
@@ -24,8 +24,8 @@ function onGeoSuccess(position) {
   clng = position.coords.longitude; 
    //alert(clat +  "," +clng);
  }
-	document.addEventListener("pause", onPause, false);
-	document.addEventListener("back button", onBackButton, false);
+	//document.addEventListener("pause", onPause, false);
+	///document.addEventListener("back button", onBackButton, false);
 };
 
 $.initMap = function() { 
@@ -33,9 +33,9 @@ $.initMap = function() {
   $('#map_canvas').gmap({'center':LatLng,'zoom':15,'minzoom':10,'disableDefaultUI':true});
 }
 //$('#map_canvas').gmap('get', 'map').setOptions({'center': new google.maps.LatLng(clat, clng) });
-function onPause() { 
-alert("resume"); 
-}	
+//function onPause() { 
+//alert("resume"); 
+//}	
 	function init() {
 		document.addEventListener("deviceready", onDeviceReady, true); }
 		
