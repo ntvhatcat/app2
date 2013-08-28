@@ -31,7 +31,10 @@ var onDeviceReady = function() {
 	document.addEventListener("pause", onPause, false);
 		document.addEventListener("back button", onBackButton, false);
 };
-$.initMap = function() { $('#map_canvas').gmap('get', 'map').setOptions({'center': new google.maps.LatLng(clat, clng) });
+$.initMap = function() { 
+var LatLng = new google.maps.LatLng(clat,clng);
+$('#map_canvas').gmap({'center':LatLng,'zoom':15,'minzoom':10,'disableDefaultUI':true});
+//$('#map_canvas').gmap('get', 'map').setOptions({'center': new google.maps.LatLng(clat, clng) });
 function onPause() { 
 alert("resume"); 
 }
