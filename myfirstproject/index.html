@@ -20,10 +20,15 @@ var onDeviceReady = function() {
  function onGeoSuccess(position) 
 { clat = position.coords.latitude;
  clng = position.coords.longitude; 
- alert(clat +  "," +clng);}
+ //alert(clat +  "," +clng);
+ $.initMap();
+ 
+ }
+ $.initMap = function() { $('#map_canvas').gmap('get', 'map').setOptions({'center': new google.maps.LatLng(clat, clng) });
 	document.addEventListener("pause", onPause, false);
 		document.addEventListener("back button", onBackButton, false);
 };
+
 function onPause() { 
 alert("resume"); 
 }
